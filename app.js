@@ -26,6 +26,7 @@ const MongoStore = require('connect-mongo');
 const campgroundRoutes = require('./routers/campground')
 const reviewRoutes = require('./routers/review')
 const userRoutes = require('./routers/users')
+const PORT = process.env.PORT || 3000 ;
 // const dbUrl = process.env.DB_URL
 // const dbUrl = process.env.DB_URL ||'mongodb://localhost:27017/yelp-camp'
 const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp';
@@ -194,6 +195,6 @@ app.use((err, req, res, next) => {
 
 
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 })
